@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.58.0'
+project:
+    name: test-branch-protection
+    package:
+        name: test-branch-protection
+        api_version: '54.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/test-branch-protection/tests
+            options:
+                outputdir: robot/test-branch-protection/results
+
+    robot_testdoc:
+        options:
+            path: robot/test-branch-protection/tests
+            output: robot/test-branch-protection/doc/test-branch-protection_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75

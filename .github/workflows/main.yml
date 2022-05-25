@@ -1,0 +1,12 @@
+name: GH Actions Demo
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Hello world
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world!"
